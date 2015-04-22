@@ -22,7 +22,19 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+	ARR_HASH = [{ foo: 'a', bar: 4 },
+    { foo: 'b', bar: 3 },
+    { foo: 'c', bar: 1 },
+    { foo: 'b', bar: 4 }]
+			
+    HashMultiTool.sort_by_order ARR_HASH, [:bar, :foo]
+
+    Note: By default it will sort in ASC order
+    
+    If you Want to sort in DESC order. 
+
+    HashMultiTool.sort_by_order ARR_HASH, [:bar, :foo], "DESC"
+    
 
 ## Development
 
