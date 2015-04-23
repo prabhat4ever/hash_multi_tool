@@ -51,4 +51,31 @@ describe HashMultiTool do
  	sort_arr_hash.first.should == {:foo=>"a", :bar => 4}
  	sort_arr_hash.last.should == {:foo=>"a", :bar => 1}
  end
+
+ it "should return empty array if passed key is not available in the hash set" do
+ 	hash_array = HashMultiTool.select_by_key_value ARR_HASH_TWO, :jango, 4
+ 	hash_array.should == []
+ end
+
+ it "should return empty array if passed value is not available in the hash set" do
+ 	hash_array = HashMultiTool.select_by_key_value ARR_HASH_TWO, :bar, 100
+ 	hash_array.should == []
+ end
+
+ it "should return proper an array of matched values" do
+ 	hash_array = HashMultiTool.select_by_key_value ARR_HASH_ONE, 'bar', 4
+ 	hash_array.count == 2
+ 	hash_array.first.should == { 'foo'=>3,'bar'=>4 }
+
+ 	hash_array = HashMultiTool.select_by_key_value ARR_HASH_TWO, :bar, 4
+ 	hash_array.count == 2
+ 	hash_array.last.should == { foo: 'b', bar: 4 }
+ end
+
+ it "should return all the available keys from a hash including subset hash" do
+ 	hash = {"World" => "Region", "Country" => [{"Name" => "India", "Capital" => "Delhi"}, {"Name" => "England", "Capital" => "London"}]}
+ 	hash_keys = HashMultiTool.collect_keys hash
+ 	hash_keys == ["World","Country","Name","Capital","Name","Capital"]
+ 	hash_keys.uniq == ["World","Country","Name","Capital"]
+ end
 end

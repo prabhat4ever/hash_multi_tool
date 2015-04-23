@@ -1,12 +1,28 @@
 require "hash_multi_tool/version"
 
 module HashMultiTool
-  def self.sort_by_order hash = {}, order = [], direction ='ASC'
-    hash.sort do |a,b|
-      a_arr = []
-  	  b_arr = []
-      order.each{|key| a_arr << a[key]; b_arr << b[key];}
-      direction.downcase == "desc" ? b_arr <=> a_arr : a_arr <=> b_arr 
-  	end
-  end
+  class << self
+	  def sort_by_order hash = {}, order = [], direction ='ASC'
+	    hash.sort do |a,b|
+	      a_arr = []
+	  	  b_arr = []
+	      order.each{|key| a_arr << a[key]; b_arr << b[key];}
+	      direction.downcase == "desc" ? b_arr <=> a_arr : a_arr <=> b_arr 
+	  	end
+	  end
+
+	  def select_by_key_value hash = {}, key = [], value = nil
+	  	hash.select { |h| h[key] == value }
+	  end
+
+	  def collect_keys(h_object)
+		  if h_object.is_a? Hash
+		    (h_object.keys + collect_keys(h_object.values)).flatten.uniq
+		  elsif h_object.is_a? Array 
+		    h_object.collect{|value| collect_keys value}
+		  else
+		    []
+		  end
+		end
+	end
 end
