@@ -27,7 +27,7 @@ Or install it yourself as:
     { foo: 'c', bar: 1 },
     { foo: 'b', bar: 4 }]
 			
-  1) HashMultiTool.sort_by_order ARR_HASH, [:bar, :foo]
+  1) HashMultiTool.sort_by_order ARR_HASH, [:bar, :foo] :-
 
 	  Note: By default it will sort in ASC order
 	  
@@ -37,11 +37,12 @@ Or install it yourself as:
 
   2) Find array of hashes of matched key values :-
 
-	  HashMultiTool.select_by_key_value ARR_HASH_ONE, :bar, 4  
+	  HashMultiTool.select_by_key_value ARR_HASH, :bar, 4  
 	  
 	  => [{ foo: 'a', bar: 4 }, { foo: 'b', bar: 4 }]
 
-	3) Return all the available keys from a hash including subset hash
+	3) Return all the available keys from a hash including subset hash :-
+		
 		hash = {"World" => "Region", "Country" => [{"Name" => "India", "Capital" => "Delhi"}, {"Name" => "England", "Capital" => "London"}]}
 		=> ["World","Country","Name","Capital","Name","Capital"]
 
