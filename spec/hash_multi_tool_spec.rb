@@ -78,4 +78,17 @@ describe HashMultiTool do
  	hash_keys == ["World","Country","Name","Capital","Name","Capital"]
  	hash_keys.uniq == ["World","Country","Name","Capital"]
  end
+
+ it "should merge the keys and with collected values belongs to respective keys and return a single hash" do
+ 	arr = [{a:1, b:2, c:3},{a:1, b:2, c:3},{a:1, b:2, c:3},{a:1, b:2}]
+ 	hash_keys = HashMultiTool.transpose_to_hash arr
+ 	hash_keys == {:a=>[1, 1, 1, 1], :b=>[2, 2, 2, 2], :c=>[3, 3, 3]}
+ end
+
+ it "Return a collection of keys differentiated with values" do
+ 	hash = {:a=>[1, 1, 1, 1], :b=>[2, 2, 2, 2], :c=>[3, 3, 3]}
+ 	hash_keys = HashMultiTool.transpose_to_array hash
+ 	hash_keys == [{a:1, b:2, c:3},{a:1, b:2, c:3},{a:1, b:2, c:3},{a:1, b:2}]
+ end
+
 end

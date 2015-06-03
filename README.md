@@ -44,7 +44,25 @@ Or install it yourself as:
 	3) Return all the available keys from a hash including subset hash :-
 		
 		hash = {"World" => "Region", "Country" => [{"Name" => "India", "Capital" => "Delhi"}, {"Name" => "England", "Capital" => "London"}]}
+		hash_keys = HashMultiTool.collect_keys hash
 		=> ["World","Country","Name","Capital","Name","Capital"]
+		
+		hash_keys.uniq 
+		=> ["World","Country","Name","Capital"]
+
+	4) Merge the keys and with collected values belongs to respective keys and return a single hash
+	 	arr = [{a:1, b:2, c:3},{a:1, b:2, c:3},{a:1, b:2, c:3},{a:1, b:2}]
+	 	
+	 	hash_keys = HashMultiTool.transpose_to_hash arr
+	 	
+	 	=> {:a=>[1, 1, 1, 1], :b=>[2, 2, 2, 2], :c=>[3, 3, 3]}
+
+ 	5) Return a collection of keys differentiated with values
+	 	hash = {:a=>[1, 1, 1, 1], :b=>[2, 2, 2, 2], :c=>[3, 3, 3]}
+	 	
+	 	hash_keys = HashMultiTool.transpose_to_array hash
+	 	
+	 	=> [{a:1, b:2, c:3},{a:1, b:2, c:3},{a:1, b:2, c:3},{a:1, b:2}]
 
 ## Development
 
