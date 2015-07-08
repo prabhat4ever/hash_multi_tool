@@ -106,12 +106,20 @@ describe HashMultiTool do
       hash = {a: 500, b: 1000, c: 1500}
       expect((HashMultiTool.sort_desc hash).to_a.first.last).to eq(1500)
     end
+
+    it "should return blank hash if blank hash is passed" do
+      expect(HashMultiTool.sort_desc Hash.new).to eq({})
+    end
   end
 
   describe ".sort_asc" do
     it "should sort the hash based on value in asc order" do
       hash = {a: 500, b: 1000, c: 1500}
       expect((HashMultiTool.sort_asc hash).to_a.first.last).to eq(500)
+    end
+
+    it "should return blank hash if blank hash is passed" do
+      expect(HashMultiTool.sort_asc Hash.new).to eq({})
     end
   end
 
