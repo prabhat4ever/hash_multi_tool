@@ -38,5 +38,13 @@ module HashMultiTool
 			  a
 			}
 		end
+
+		def sort_desc hash
+			Hash[hash.sort_by {|k, v| -v}]
+		end
+
+		def sort_asc hash
+			Hash[hash.sort_by {|k, v| v}]
+		end
 	end
 end
