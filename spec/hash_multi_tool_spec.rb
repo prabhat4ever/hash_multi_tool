@@ -108,7 +108,7 @@ describe HashMultiTool do
     end
   end
 
-  describe ".asc_desc" do
+  describe ".sort_asc" do
     it "should sort the hash based on value in asc order" do
       hash = {a: 500, b: 1000, c: 1500}
       expect((HashMultiTool.sort_asc hash).to_a.first.last).to eq(500)
