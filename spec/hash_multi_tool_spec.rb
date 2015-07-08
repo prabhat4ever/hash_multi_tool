@@ -123,4 +123,17 @@ describe HashMultiTool do
     end
   end
 
+  describe ".values_to_percentage" do
+    it "should return correct percentages based on sum of all values" do
+      hash = {a: 500, b: 1000, c: 1500}
+      expect(HashMultiTool.values_to_percentage hash).to eq({a:16.67,b:33.33,c:50.0})
+    end
+
+    it "should return valid message incase input hash values are not numbers or decimal" do
+      hash = {a: 500, b: 'string', c: :symbol}
+      expect(HashMultiTool.values_to_percentage hash).to eq('Percentage can only be calculated for numbers or decimals')
+    end
+
+  end
+
 end
