@@ -65,7 +65,24 @@ Or install it yourself as:
 	hash_keys = HashMultiTool.transpose_to_array hash
 	 	
 	=> [{a:1, b:2, c:3},{a:1, b:2, c:3},{a:1, b:2, c:3},{a:1, b:2}]
-
+	
+ 6) Sort a hash by value in ascending order:
+ 
+    hash = {a: 1000, b: 500, c: 1500}
+ 	
+    HashMultiTool.sort_asc hash
+    
+    => {:a=>500, :b=>1000, :c=>1500}
+    
+ 7) Sort a hash by value in descending order:
+ 
+    hash = {a: 1000, b: 500, c: 1500}
+ 	
+    HashMultiTool.sort_desc hash
+    
+    => {:c=>1500, :b=>1000, :a=>500}
+ 	
+ 	
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment.
