@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Prabhat Thapa"]
   spec.email         = ["prabhat_thapa@external.mckinsey.com"]
 
-  spec.summary       = %q{Sort a array of hashes with one or multiple values}
-  spec.description   = %q{Sort a array of hashes with one or multiple values}
+  spec.summary       = %q{A swiss army knife for collection of hashes. Play with it to know its strength.}
+  spec.description   = %q{A swiss army knife for collection of hashes. Play with it to know its strength.}
   spec.homepage      = "https://github.com/prabhat4ever/hash_multi_tool/"
   spec.license       = "MIT"
 
