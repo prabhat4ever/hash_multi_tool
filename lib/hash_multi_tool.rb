@@ -45,6 +45,16 @@ module HashMultiTool
 
 		def sort_asc hash
 			Hash[hash.sort_by {|k, v| v}]
-		end
+    end
+
+    def values_to_percentage hash
+      if (hash.values.map{|val| val.is_a? Fixnum || Float }).all? {|boolean| boolean == true}
+        sum = hash.values.inject 0, :+
+        hash.each { |k,v| hash[k] = (v*100/sum.to_f).round(2) }
+      else
+        'Percentage can only be calculated for numbers or decimals'
+      end
+    end
+
 	end
 end

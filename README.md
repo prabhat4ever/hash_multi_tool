@@ -81,6 +81,14 @@ Or install it yourself as:
     HashMultiTool.sort_desc hash
     
     => {:c=>1500, :b=>1000, :a=>500}
+    
+ 8) Convert values of hash to percentage based on sum of values
+ 
+    hash = {a: 20, b: 20}
+    
+    HashMultiTool.values_to_percentage hash
+    
+    => {:a=>50.0, :b=>50.0}
  	
  	
 ## Development
