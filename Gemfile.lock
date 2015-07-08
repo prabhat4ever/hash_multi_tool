@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    hash_multi_tool (0.1.1)
+    hash_multi_tool (0.1.2)
 
 GEM
   remote: https://rubygems.org/
@@ -25,3 +25,6 @@ DEPENDENCIES
   hash_multi_tool!
   rake (~> 10.0)
   rspec
+
+BUNDLED WITH
+   1.10.5
